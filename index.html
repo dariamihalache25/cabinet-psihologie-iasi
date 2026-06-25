@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet Psihologie Iași | Aviz Auto, Muncii & Siguranță</title>
+    <meta name="description" content="Cabinet Individual de Psihologie Mihalache Violeta, Iași. Evaluări și avize autorizate: auto, medicina muncii, siguranța transporturilor (ADR) și apărare.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+    <header id="navbar">
+        <a href="#" class="logo">MIHALACHE VIOLETA</a>
+        <nav>
+            <ul>
+                <li><a href="#servicii">EXPERTIZĂ</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+        <a href="tel:0744399492" class="btn-call">0744 399 492</a>
+    </header>
+
+    <section class="hero reveal">
+        <div class="hero-content">
+            <img src="WhatsApp Image 2026-06-25 at 3.31.40 PM.jpeg" alt="Logo Psihologie" class="hero-logo">
+            <h1 class="hero-title">CABINET INDIVIDUAL</br><span style="color: var(--primary-blue);">DE PSIHOLOGIE</span></h1>
+            <p class="hero-subtitle">Expertiză autorizată pentru obținerea avizelor necesare în transporturi, muncă și siguranță națională.</p>
+
+            <div class="programare-wrapper">
+                <button class="btn-programare" tabindex="0">PROGRAMEAZĂ-TE</button>
+                <div class="programare-options">
+                    <a href="tel:0744399492" class="btn-phone">📞 Sună acum</a>
+                    <a href="https://wa.me/40744399492" target="_blank" class="btn-wa">💬 WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="servicii" class="services-premium">
+        <h2 class="section-title reveal">EXPERTIZĂ</h2>
+
+        <div class="services-compact-grid">
+            <div class="compact-card reveal">
+                <div class="service-number">01</div>
+                <h3>PSIHOLOGIA TRANSPORTURILOR</h3>
+                <p>Aviz psihologic obligatoriu pentru obținerea sau redobândirea permisului de conducere. Evaluare rapidă, precisă și autorizată.</p>
+            </div>
+
+            <div class="compact-card reveal">
+                <div class="service-number">02</div>
+                <h3>MUNCĂ & ORGANIZAȚIONALĂ</h3>
+                <p>Aviz psihologic pentru angajare, evaluare periodică, înscriere la curs, concurs și titularizare. Asigurăm un mediu profesional sigur.</p>
+            </div>
+
+            <div class="compact-card reveal">
+                <div class="service-number">03</div>
+                <h3>SIGURANȚA TRANSPORTURILOR</h3>
+                <p>Atestate profesionale, conducător auto transport persoane, marfă, ADR (mărfuri periculoase), agabaritic, bancar/valori, ambarcațiuni, manager transport și instructori auto.</p>
+            </div>
+
+            <div class="compact-card reveal">
+                <div class="service-number">04</div>
+                <h3>APĂRARE & ORDINE PUBLICĂ</h3>
+                <p>Evaluări psihologice de înaltă precizie specifice domeniului de apărare, ordine publică și siguranță națională.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Secțiunea Contact (Luminoasă și Aerisită) -->
+    <section id="contact" class="contact-premium reveal">
+        <h2 class="section-title">CONTACT</h2>
+        <div class="contact-grid">
+            <a href="https://www.google.com/maps/search/?api=1&query=Cabinet+Individual+de+Psihologie+Mihalache+Violeta+Iasi+Str+Strapungere+Silvestru+nr+8" target="_blank" class="contact-card">
+                <h3>ADRESA</h3>
+                <p>Str. Străpungere Silvestru nr. 8<br><span>(incinta Biodev Medical Center)</span></p>
+                <span class="card-action">MAPS ➔</span>
+            </a>
+
+            <a href="tel:0744399492" class="contact-card">
+                <h3>TELEFON</h3>
+                <p>0744 399 492<br><span>Apel direct</span></p>
+                <span class="card-action">SUNĂ ➔</span>
+            </a>
+
+            <a href="https://www.facebook.com/p/Cabinet-Individual-de-Psihologie-Mihalache-Violeta-100063462286666/" target="_blank" class="contact-card">
+                <h3>SOCIAL</h3>
+                <p>Cabinet Individual de Psihologie<br><span>Urmărește-ne pe Facebook</span></p>
+                <span class="card-action">FACEBOOK ➔</span>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+        // Schimbă culoarea barei de navigare la scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+        });
+    </script>
+</body>
+</html>
