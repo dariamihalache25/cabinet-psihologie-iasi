@@ -1,11 +1,11 @@
 /* --- Variabile High-End Luminate și Calme --- */
 :root {
-    --deep-navy: #1f426b; /* Un bleumarin mult mai blând, prietenos, nu negru */
-    --primary-blue: #2a75d3; /* Albastru mai viu și luminos */
-    --primary-blue-hover: #1e5bb0; /* Pentru efectul de hover la butoane */
-    --baby-blue: #f0f6fc; /* Bleu foarte deschis, ca un nor */
+    --deep-navy: #1f426b;
+    --primary-blue: #2a75d3;
+    --primary-blue-hover: #1e5bb0;
+    --baby-blue: #f0f6fc;
     --white: #ffffff;
-    --text-gray: #5c728a; /* Gri-albăstrui pentru text, foarte blând cu ochii */
+    --text-gray: #5c728a;
     --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -207,7 +207,7 @@ nav a:hover { color: var(--primary-blue); }
 .btn-wa { background: #25D366; }
 .btn-wa:hover { background: #1ebe57; }
 
-/* --- Expertiza (Compact & Premium) --- */
+/* --- Expertiza (Servicii) --- */
 .services-premium {
     padding: 100px 5vw;
     max-width: 1400px;
@@ -220,21 +220,24 @@ nav a:hover { color: var(--primary-blue); }
     gap: 30px;
 }
 
+/* Cardurile de Expertiză - Stilul Buton */
 .compact-card {
+    cursor: pointer;
     background: var(--baby-blue);
     padding: 50px 40px;
     position: relative;
     border-radius: 8px;
     transition: var(--transition-smooth);
-    overflow: hidden;
     border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .compact-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(31, 66, 107, 0.08);
-    background: var(--white);
-    border: 1px solid rgba(42, 117, 211, 0.1);
+    box-shadow: 0 20px 40px rgba(42, 117, 211, 0.15);
+    background: var(--primary-blue);
 }
 
 .compact-card .service-number {
@@ -250,7 +253,7 @@ nav a:hover { color: var(--primary-blue); }
 }
 
 .compact-card:hover .service-number {
-    color: rgba(42, 117, 211, 0.12);
+    color: rgba(255, 255, 255, 0.1);
 }
 
 .compact-card h3 {
@@ -260,16 +263,104 @@ nav a:hover { color: var(--primary-blue); }
     color: var(--deep-navy);
     position: relative;
     z-index: 2;
+    transition: color 0.3s ease;
 }
 
-.compact-card p {
-    font-size: 1.05rem;
-    color: var(--text-gray);
+.compact-card:hover h3 {
+    color: var(--white);
+}
+
+.btn-vezi-detalii {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--primary-blue);
+    transition: color 0.3s ease;
     position: relative;
     z-index: 2;
 }
 
-/* --- Contact Premium (Luminos) --- */
+.compact-card:hover .btn-vezi-detalii {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- Modal Styling --- */
+.custom-modal {
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 66, 107, 0.6);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+.custom-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: var(--white);
+    padding: 60px 50px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    transform: translateY(30px);
+    transition: transform 0.4s ease;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.custom-modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-gray);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--deep-navy);
+}
+
+.modal-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: rgba(42, 117, 211, 0.1);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.modal-content h3 {
+    font-size: 1.8rem;
+    color: var(--deep-navy);
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+/* --- Contact Premium --- */
 .contact-premium {
     background: linear-gradient(180deg, var(--white) 0%, var(--baby-blue) 100%);
     padding: 100px 5vw 120px;
@@ -301,71 +392,25 @@ nav a:hover { color: var(--primary-blue); }
     box-shadow: 0 20px 40px rgba(42, 117, 211, 0.15);
 }
 
-/* Make the whole card act like a clickable button */
-.compact-card {
-    cursor: pointer;
-    background: var(--baby-blue);
-    padding: 40px; /* Slightly adjusted padding for collapsed state */
-    position: relative;
-    border-radius: 8px;
-    transition: var(--transition-smooth);
-    border: 1px solid transparent;
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
-/* Align the title and the '+' icon */
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-}
-
-.compact-card h3 {
-    font-size: 1.4rem;
-    color: var(--deep-navy);
-    margin: 0; /* Removed old margins to let flexbox handle spacing */
-    padding-right: 15px;
-}
-
-/* The toggle '+' icon */
-.toggle-icon {
-    font-size: 2rem;
-    font-weight: 300;
-    color: var(--primary-blue);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    line-height: 1;
-}
-
-/* Transform the '+' into an 'x' when expanded */
-.compact-card.expanded .toggle-icon {
-    transform: rotate(45deg);
-    color: var(--deep-navy);
-}
-
-/* The expanding body using CSS Grid for a smooth slide-down effect */
-.card-body {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    z-index: 2;
-}
-
-.card-body-inner {
-    overflow: hidden;
-}
-
-/* When the card gets the 'expanded' class, open the grid */
-.compact-card.expanded .card-body {
-    grid-template-rows: 1fr;
-}
-
-.compact-card p {
-    font-size: 1.05rem;
+.contact-card p {
     color: var(--text-gray);
-    margin-top: 20px; /* Space between title and text when open */
-    margin-bottom: 0;
+    flex-grow: 1;
+    margin-bottom: 40px;
+    transition: color 0.3s ease;
+}
+
+.contact-card:hover p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-card p span {
+    font-size: 0.85rem;
+    opacity: 0.8;
 }
 
 .card-action {
