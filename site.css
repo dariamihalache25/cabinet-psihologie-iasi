@@ -301,25 +301,71 @@ nav a:hover { color: var(--primary-blue); }
     box-shadow: 0 20px 40px rgba(42, 117, 211, 0.15);
 }
 
-.contact-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+/* Make the whole card act like a clickable button */
+.compact-card {
+    cursor: pointer;
+    background: var(--baby-blue);
+    padding: 40px; /* Slightly adjusted padding for collapsed state */
+    position: relative;
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
 }
 
-.contact-card p {
+/* Align the title and the '+' icon */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.compact-card h3 {
+    font-size: 1.4rem;
+    color: var(--deep-navy);
+    margin: 0; /* Removed old margins to let flexbox handle spacing */
+    padding-right: 15px;
+}
+
+/* The toggle '+' icon */
+.toggle-icon {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--primary-blue);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    line-height: 1;
+}
+
+/* Transform the '+' into an 'x' when expanded */
+.compact-card.expanded .toggle-icon {
+    transform: rotate(45deg);
+    color: var(--deep-navy);
+}
+
+/* The expanding body using CSS Grid for a smooth slide-down effect */
+.card-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.card-body-inner {
+    overflow: hidden;
+}
+
+/* When the card gets the 'expanded' class, open the grid */
+.compact-card.expanded .card-body {
+    grid-template-rows: 1fr;
+}
+
+.compact-card p {
+    font-size: 1.05rem;
     color: var(--text-gray);
-    flex-grow: 1;
-    margin-bottom: 40px;
-    transition: color 0.3s ease;
-}
-
-.contact-card:hover p {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.contact-card p span {
-    font-size: 0.85rem;
-    opacity: 0.8;
+    margin-top: 20px; /* Space between title and text when open */
+    margin-bottom: 0;
 }
 
 .card-action {
